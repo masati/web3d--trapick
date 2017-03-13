@@ -1,0 +1,16 @@
+/vendor
+/node_modules
+/public/storage
+Homestead.yaml
+Homestead.json
+.env
+.idea
+.idea/deployment.xml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/workspace.xml
+_private/.env.example
+_private/composer.lock
+images
+uploads
+/composer.phar
