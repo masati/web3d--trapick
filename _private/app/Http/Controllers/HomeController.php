@@ -23,7 +23,7 @@ class HomeController extends Controller
         ]);
     }
 
-    public function getPage($url = '')
+    /*public function getPage($url = '')
     {
         if (empty($url)) {
             return redirect('/');
@@ -101,5 +101,5 @@ class HomeController extends Controller
             'title' => $content->title,
             'message' => trans('app.txt-message_sent_success')
         ]);
-    }
+    }*/
 }

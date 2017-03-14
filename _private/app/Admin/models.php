@@ -54,7 +54,7 @@ AdminSection::registerModel(\App\Models\User::class, function (ModelConfiguratio
 
 
 
-AdminSection::registerModel(\App\Models\Source::class, function (ModelConfiguration $model) {
+/*AdminSection::registerModel(\App\Models\Source::class, function (ModelConfiguration $model) {
     $model->setTitle('Sources');
     // Display
     $model->onDisplay(function () {
@@ -94,10 +94,10 @@ AdminSection::registerModel(\App\Models\Source::class, function (ModelConfigurat
             AdminFormElement::wysiwyg('text', 'Text'),
         ]);
     });
-});
+});*/
 
 
-AdminSection::registerModel(\App\Models\SourceBackup::class, function (ModelConfiguration $model) {
+/*AdminSection::registerModel(\App\Models\SourceBackup::class, function (ModelConfiguration $model) {
     $model->setTitle('Sources Backups');
     // Display
     $model->onDisplay(function () {
@@ -134,9 +134,9 @@ AdminSection::registerModel(\App\Models\SourceBackup::class, function (ModelConf
             AdminFormElement::wysiwyg('text', 'Text'),
         ]);
     });
-});
+});*/
 
-AdminSection::registerModel(\App\Models\Lesson::class, function (ModelConfiguration $model) {
+/*AdminSection::registerModel(\App\Models\Lesson::class, function (ModelConfiguration $model) {
     $model->setTitle('Sessions');
     // Display
     $model->onDisplay(function () {
@@ -182,47 +182,7 @@ AdminSection::registerModel(\App\Models\Lesson::class, function (ModelConfigurat
             AdminFormElement::checkbox('shabat_friendly', 'Shabbat friendly'),
         ]);
     });
-});
-
-AdminSection::registerModel(\App\Models\Tag::class, function (ModelConfiguration $model) {
-    $model->setTitle('List of tags');
-    // Display
-    $model->onDisplay(function () {
-
-        return AdminDisplay::datatables()
-            ->setHtmlAttribute('class', 'table-primary')
-            ->setColumns([
-                AdminColumn::text('id')->setLabel('#'),
-                AdminColumn::text('name')->setLabel('Tag name'),
-            ]);
-    });
-    // Create And Edit
-    $model->onCreateAndEdit(function() {
-        return AdminForm::panel()->addBody([
-            AdminFormElement::text('name', 'Tag name')->required(),
-        ]);
-    });
-});
-
-AdminSection::registerModel(\App\Models\Category::class, function (ModelConfiguration $model) {
-    $model->setTitle('List of categories');
-    // Display
-    $model->onDisplay(function () {
-
-        return AdminDisplay::datatables()
-            ->setHtmlAttribute('class', 'table-primary')
-            ->setColumns([
-                AdminColumn::text('id')->setLabel('#'),
-                AdminColumn::text('name')->setLabel('Category name'),
-            ]);
-    });
-    // Create And Edit
-    $model->onCreateAndEdit(function() {
-        return AdminForm::panel()->addBody([
-            AdminFormElement::text('name', 'Category name')->required(),
-        ]);
-    });
-});
+});*/
 
 AdminSection::registerModel(\App\Models\Page::class, function (ModelConfiguration $model) {
     $model->setTitle('Static pages');
@@ -249,24 +209,5 @@ AdminSection::registerModel(\App\Models\Page::class, function (ModelConfiguratio
             AdminFormElement::select('locale', 'Lang', ['en' => 'english', 'he' => 'hebrew'] )->setDisplay('locale'),
             AdminFormElement::wysiwyg('content', 'Content'),
         ]);
-    });
-});
-
-AdminSection::registerModel(\App\Models\Feedback::class, function (ModelConfiguration $model) {
-    $model->setTitle('Feedback');
-    // Display
-    $model->onDisplay(function () {
-
-        return AdminDisplay::datatables()
-            ->setHtmlAttribute('class', 'table-primary')
-            ->setColumns([
-                #AdminColumn::text('id')->setLabel('#'),
-                AdminColumn::datetime('updated_at')->setLabel('Date'),
-                AdminColumn::text('first_name')->setLabel('First Name'),
-                AdminColumn::text('last_name')->setLabel('Last Name'),
-                AdminColumn::text('institution')->setLabel('Institution'),
-                AdminColumn::text('email')->setLabel('Email'),
-                AdminColumn::text('query')->setLabel('Message'),
-           ]);
     });
 });

@@ -29,7 +29,6 @@
     <div class="container main">
         <div class="row">
             <div class="col-md-12">
-                @include('partials._myplace')
             @yield('content')
             </div>
         </div>

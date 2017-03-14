@@ -25,8 +25,8 @@ Route::group(['middlewareGroups' => 'web'], function ()
     Route::auth();
 
     /*Route::get('sessions/backup/{id}', 'SessionsController@getBackups')->where(['id' => '[0-9]+']);*/
-    Route::get('contacts', 'HomeController@getFeed');
-    Route::get('/{url}','HomeController@getPage')->where(['url' => '^(?!admin|_debugbar|contacts).+$']);
+/*    Route::get('contacts', 'HomeController@getFeed');
+    Route::get('/{url}','HomeController@getPage')->where(['url' => '^(?!admin|_debugbar|contacts).+$']);*/
     Route::get('/', 'HomeController@getIndex');
 
 
