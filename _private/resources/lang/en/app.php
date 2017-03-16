@@ -126,7 +126,7 @@ return [
     'session_adapt' => 'Adapt session',
     'session_edit' => 'Edit session',
     'shabbat_friendly' => 'Shabbat friendly',
-    'slogan' => 'Taking you all the way',
+    'slogan' => 'Trapick - Taking you all the way',
     'sources' => 'Sources',
     'sources_database' => 'Sources database',
     'sources_my' => 'My sources',
@@ -175,4 +175,22 @@ return [
     'time_60 mins' => '60 mins',
     'time_90 mins' => '90 mins',
     'time_2 hours' => '2 hours',
+
+    'date' => 'Date',
+    'to' => 'To',
+    'from' => 'From',
+    'baby' => 'Passengers 2-',
+    'passengers' => 'Passengers 2+',
+    'order_back' => 'Order ride back',
+
+    'continue' => 'Continue',
+    'back' => 'Back',
+
+    'car_choose' => 'Please choose on of the car types:',
+    'car_pass' => 'Number of passengers:',
+    'car_bags' => 'Number of bags:',
+    'car_extra' => 'Extra:',
+    'car_extra_ski' => 'Ski equipment:',
+    'car_extra_vip' => 'VIP service at airport:',
+    'car_some_text' => '* Some long text long text long text',
 ];

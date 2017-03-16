@@ -12,6 +12,7 @@ use App\Http\Requests\Step3Request;
 use App\Http\Requests\Step4Request;
 
 use App\Models\Transport;
+use App\Models\Cars;
 use App\Models\Order;
 use App\Models\Route;
 
@@ -30,8 +31,8 @@ class OrderController extends Controller
 
     public function postStep1(Request $request)
     {
-        //dd($request->all());
-        validate();
+        //dd($request);
+        //validate()
         //return back()->withInput();
 
         return redirect("step2");

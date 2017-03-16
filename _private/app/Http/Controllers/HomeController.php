@@ -6,6 +6,7 @@ use App\Models\Helper;
 use App\Models\User;
 use App\Models\Transport;
 use App\Models\Extra;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
