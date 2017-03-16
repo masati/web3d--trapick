@@ -18,10 +18,10 @@ Route::group(['middlewareGroups' => 'web', 'middleware' => 'auth'], function ()
 
 Route::group(['middlewareGroups' => 'web'], function ()
 {    
-    /*Route::get('registration', function(){
+    Route::get('registration', function(){
         return view('auth.registration');
         });
-    Route::post('registration', 'Auth\AuthController@create');*/
+    Route::post('registration', 'Auth\AuthController@create');
     Route::auth();
 
     /*Route::get('sessions/backup/{id}', 'SessionsController@getBackups')->where(['id' => '[0-9]+']);*/

@@ -12,7 +12,7 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'about' => 'אודות 4HQ',
+    'about' => 'אודות',
     'all' => 'כולם',
     'action' => 'פעולה',
     'adapt' => 'עיבוד',
@@ -33,7 +33,7 @@ return [
     'city' => 'עיר',
     'close' => 'סגור',
     'confirm_password' => 'אשר סיסמה',
-    'contact_us' => 'ליצור קשר',
+    'contact' => 'ליצור קשר',
     'content' => 'תוכן',
     'content_types' => 'סוגי תוכן',
     'copyright' => '© 2016, כל הזכויות שמורות',
@@ -58,6 +58,7 @@ return [
     'favorite_sources' => '!Favorite sources',
     'first_name' => 'שם פרטי',
     'for_age' => 'גילאים',
+    'full_name' => 'שם מלא',
     'help' => 'עזרה',
     'home-title' => '!Hot and Ready',
     'how_show_gallery' => '!How do you want to show the gallery',
@@ -114,7 +115,7 @@ return [
     'save_draft' => 'לשמור טיוטה',
     'search' => 'חיפוש',
     'send' => 'שלח',
-    'session' => 'מערכה',
+    'services' => 'שירותים',
     'sessions' => 'מערכים',
     'sessions_database' => '!Sessions database',
     'sessions_my' => 'מערכים שלי',
@@ -151,7 +152,7 @@ return [
     'type' => 'סוג',
     'unpublish' => '!Unpublish',
     'upload_sources' => 'להעלות מקור',
-    'user_profile' => 'פרופיל משתמש',
+    'user-area' => 'כניסה לאזור אישי',
     'user_profile_edit' => 'פרופיל משתמש - עריכה',
     'uses_audio' => 'אודיו',
     'uses_video' => 'וידאו',

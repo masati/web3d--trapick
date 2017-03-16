@@ -55,7 +55,7 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
+            'full_name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
         ]);
     }
@@ -70,7 +70,7 @@ class AuthController extends Controller
     {
         #Meta::loadPackage('datetimepicker');
         $this->validate($request, [
-            'name' => 'required|max:255',
+            'full_name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
                     ]);
 

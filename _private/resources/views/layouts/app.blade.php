@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{isset($title) ? "$title - " : ''}}4HQ</title>
+    <title>{{isset($title) ? "$title - " : ''}}Trapick</title>
 
     <!-- Styles -->
     <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">

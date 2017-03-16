@@ -13,11 +13,11 @@
                 <p class="title">{{ trans('app.slogan') }}</p>
                 <nav>
                     <ul class="wrap">
-                            <li><a href="/about">{{ trans('app.about') }}</a></li>
-                            <li><a href="/sessions">{{ trans('app.sessions') }}</a></li>
-                            <li><a href="/sources">{{ trans('app.sources') }}</a></li>
-                            <li><a href="/help">{{ trans('app.help') }}</a></li>
-                            <li><a href="/contacts">{{ trans('app.contact_us') }}</a></li>
+                        <li><a href="/">{{ trans('app.home-page') }}</a></li>
+                        <li><a href="/about">{{ trans('app.about') }}</a></li>
+                        <li><a href="/services">{{ trans('app.services') }}</a></li>
+                        <li><a href="/contact">{{ trans('app.contact') }}</a></li>
+                        <li><a href="/user-area">{{ trans('app.user-area') }}</a></li>
                     </ul>
                 </nav>
             </div>

@@ -27,55 +27,20 @@ AdminNavigation::setAccessLogic(function(Page $page) {
 // AdminSection::addMenuPage(\App\User::class)
 
 return [
-    [
-        'title' => 'Admin',
-        'pages' => [
-            (new Page(App\Models\User::class))
-                ->setIcon('fa fa-user')
-                ->setPriority(0),
-            (new Page(App\Models\Feedback::class))
-                ->setIcon('fa fa-document')
-                ->setTitle('Feedback')
-                ->setPriority(10),
-            (new Page(App\Models\Tag::class))
-                ->setIcon('fa fa-document')
-                ->setTitle('Tags')
-                ->setPriority(10),
-            (new Page(App\Models\Category::class))
-                ->setIcon('fa fa-document')
-                ->setTitle('Categories')
-                ->setPriority(20),
-            (new Page(App\Models\Page::class))
-                ->setIcon('fa fa-document')
-                ->setTitle('Pages')
-                ->setPriority(30),
-        ]
-    ],
-    [
-        'title' => 'Sessions',
-        'pages' => [
-            /*(new Page(App\Models\SourceTag::class))
-                ->setIcon('fa fa-document')
-                ->setPriority(1),*/
-            (new Page(App\Models\Source::class))
-                ->setIcon('fa fa-document')
-                ->setPriority(0),
-            (new Page(App\Models\Lesson::class))
-                ->setIcon('fa fa-document')
-                ->setTitle('Sessions')
-                ->setPriority(0),
-/*            (new Page(App\Models\LessonBackup::class))
-                ->setIcon('fa fa-document')
-                ->setTitle('Sessions backup')
-                ->setPriority(10),*/
-        ]
-    ],
+            [
+                'title' => 'Admin',
+                'pages' => [
+                    (new Page(App\Models\User::class))
+                        ->setIcon('fa fa-user')
+                        ->setPriority(0)
+                ]
+            ],
 
-    [
-        'title' => 'Information',
-        'icon'  => 'fa fa-exclamation-circle',
-        'url'   => route('admin.information'),
-    ],
+            [
+                'title' => 'Information',
+                'icon'  => 'fa fa-exclamation-circle',
+                'url'   => route('admin.information'),
+            ],
 
     // Examples
     // [
