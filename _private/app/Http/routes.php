@@ -24,12 +24,28 @@ Route::group(['middlewareGroups' => 'web'], function ()
     Route::post('registration', 'Auth\AuthController@create');
     Route::auth();
 
-    /*Route::get('sessions/backup/{id}', 'SessionsController@getBackups')->where(['id' => '[0-9]+']);*/
-/*    Route::get('contacts', 'HomeController@getFeed');
-    Route::get('/{url}','HomeController@getPage')->where(['url' => '^(?!admin|_debugbar|contacts).+$']);*/
+// Step by step form
+    Route::get('step1', 'OrderController@getStep1');
+    Route::post('step1', 'OrderController@postStep1')
+        ->name('step1');
+
+    Route::get('step2', 'OrderController@getStep2');
+    Route::post('step2', 'OrderController@postStep2')
+        ->name('step2');
+
+    Route::get('step3', 'OrderController@getStep3');
+    Route::post('step3', 'OrderController@postStep3')
+        ->name('step3');
+
+    Route::get('step4', 'OrderController@getStep4');
+    Route::post('step4', 'OrderController@postStep4')
+        ->name('step4');
+
+    Route::get('step5', 'OrderController@getStep5');
+    Route::post('step5', 'OrderController@postStep5')
+        ->name('step5');
+
     Route::get('/', 'HomeController@getIndex');
-
-
 });
 
 /*

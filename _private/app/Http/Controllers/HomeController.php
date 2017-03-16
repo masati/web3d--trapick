@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Helper;
 use App\Models\User;
-use App\Models\Page;
+use App\Models\Transport;
+use App\Models\Extra;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
