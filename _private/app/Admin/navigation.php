@@ -32,15 +32,21 @@ return [
                 'pages' => [
                     (new Page(App\Models\User::class))
                         ->setIcon('fa fa-user')
+                        ->setPriority(0),
+                    (new Page(App\Models\Transport::class))
+                        ->setIcon('fa fa-car')
+                        ->setPriority(0),
+                    (new Page(App\Models\Extra::class))
+                        ->setIcon('fa fa-calendar-plus-o')
                         ->setPriority(0)
                 ]
             ],
-
+/*
             [
                 'title' => 'Information',
                 'icon'  => 'fa fa-exclamation-circle',
                 'url'   => route('admin.information'),
-            ],
+            ],*/
 
     // Examples
     // [

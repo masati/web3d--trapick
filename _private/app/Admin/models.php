@@ -27,3 +27,48 @@ AdminSection::registerModel(\App\Models\User::class, function (ModelConfiguratio
         ]);
     });
 });
+
+AdminSection::registerModel(\App\Models\Transport::class, function (ModelConfiguration $model) {
+    $model->setTitle('Transport');
+    // Display
+    $model->onDisplay(function () {
+        return AdminDisplay::datatablesAsync()
+            ->setHtmlAttribute('class', 'table-primary')
+            ->setColumns([
+                AdminColumn::text('name')->setLabel('Name'),
+                AdminColumn::text('cost')->setLabel('Cost'),
+                AdminColumn::text('capacity')->setLabel('Capacity'),
+                AdminColumn::text('bags')->setLabel('Bags'),
+
+            ])->paginate(25);
+    });
+    // Create And Edit
+    $model->onCreateAndEdit(function() {
+        return AdminForm::panel()->addBody([
+            AdminFormElement::text('name', 'Name')->required(),
+            AdminFormElement::text('cost', 'Cost')->required(),
+            AdminFormElement::text('capacity', 'Capacity'),
+            AdminFormElement::text('bags', 'Bags'),
+        ]);
+    });
+});
+
+AdminSection::registerModel(\App\Models\Extra::class, function (ModelConfiguration $model) {
+    $model->setTitle('Extras');
+    // Display
+    $model->onDisplay(function () {
+        return AdminDisplay::datatablesAsync()
+            ->setHtmlAttribute('class', 'table-primary')
+            ->setColumns([
+                AdminColumn::text('title')->setLabel('Title'),
+                AdminColumn::text('cost')->setLabel('Cost'),
+            ])->paginate(25);
+    });
+    // Create And Edit
+    $model->onCreateAndEdit(function() {
+        return AdminForm::panel()->addBody([
+            AdminFormElement::text('title', 'Title')->required(),
+            AdminFormElement::text('cost', 'Cost')->required(),
+        ]);
+    });
+});

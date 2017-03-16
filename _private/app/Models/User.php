@@ -13,8 +13,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'job_title', 'institution', 'country_id',
-        'city', 'phone', 'email', 'password', 'to_approve', 'date_course'
+        'full_name', 'password', 'phone'
     ];
 
     /**
@@ -26,46 +25,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function country() {
-        return $this->belongsTo('\App\Models\Country');
-    }
-
-    public function sources()
-    {
-        return $this->hasMany('\App\Models\Source', 'user_id');
-    }
-
-    public function lessons()
-    {
-        return $this->hasMany('\App\Models\Lesson', 'user_id');
-    }
-
-    public function pages()
-    {
-        return $this->hasOne(\App\Models\Page::class);
-    }
-
-    public function favorite_sources()
-    {
-        return $this->belongsToMany('\App\Models\Source', 'favorite_sources');
-    }
-
-    public function favorite_lessons()
-    {
-        return $this->belongsToMany('\App\Models\Lesson', 'favorite_lessons');
-    }
-
-
-
     public function setPasswordAttribute($value)
     {
         if( $value )
             $this->attributes['password'] = bcrypt($value);
-    }
-
-    public function getFullNameAttribute()
-    {
-        return $this->first_name . ' ' . $this->last_name;
     }
 
     public function isAdmin()
