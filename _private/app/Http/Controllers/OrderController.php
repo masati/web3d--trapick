@@ -22,7 +22,6 @@ class OrderController extends Controller
 
     public function getStep1(Request $request)
     {
-        //dump($request->all(), $request->old());
         $data = [
             'step' => 1,
             'routes' => Route::all()->pluck('name', 'id'),
@@ -33,9 +32,6 @@ class OrderController extends Controller
 
     public function postStep1(Request $request)
     {
-        //dd($request->all(), $request->old());
-        //validate()
-        //return back()->withInput();
         return redirect("step2")->withInput();
     }
 
@@ -98,7 +94,6 @@ class OrderController extends Controller
 
     public function getStep3(Request $request)
     {
-        //dump($request->all(), $request->old());
         $input = $request->old();
         $data = [];
        foreach($input as $key => $value) {
@@ -135,8 +130,6 @@ class OrderController extends Controller
                'route_to' => $data[1]['route_to']
            ]);
        }
-
-        //$rides = new Ride;
         return redirect('orders/' . $order->id);
     }
 
