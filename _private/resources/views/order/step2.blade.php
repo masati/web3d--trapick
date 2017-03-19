@@ -1,84 +1,29 @@
 @extends('layouts.app')
 @section('content')
     <h2>{{ trans('app.slogan') }}</h2>
-
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <nav>
-                <ul class="wrap">
-                    <li><span {!! is_active($step, 1) !!} class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></li>
-                    <li><span {!! is_active($step, 2) !!} class="glyphicon glyphicon-tag" aria-hidden="true"></span></li>
-                    <li><span {!! is_active($step, 3) !!} class="glyphicon glyphicon-user" aria-hidden="true"></span></li>
-                    <li><span {!! is_active($step, 4) !!} class="glyphicon glyphicon-credit-card" aria-hidden="true"></span></li>
-                    <li><span {!! is_active($step, 5) !!} class="glyphicon glyphicon-ok" aria-hidden="true"></span></li>
-                </ul>
-            </nav>
+            @include('partials.nav_steps')
         </div>
     </div>
-
     {!! Form::open(['route' => 'step2', 'class' => 'form']) !!}
-
-    <div class="row">
-        <div class="col-md-4">
-            {{ trans('app.from') }}
-            {{ Form::select('route_from', [0=>''] + $routes->toArray(), null, ['class' => 'select2'] ) }}
-        </div>
-        <div class="col-md-4">
-            {{ trans('app.to') }}
-            {{ Form::select('route_to', [0=>''] + $routes->toArray(), null, ['class' => 'select2'] ) }}
-        </div>
-        <div class="col-md-4">
-            {{ trans('app.date') }}
-            <div class="input-date input-group">
-                {!! Form::text('pick_date', old('pick_date'),
-                ['class' => 'form-control',
-                'placeholder' => 'YYYY-MM-DD',
-                'data-date-pickdate' => 'true',
-                'data-date-picktime' => 'false',
-                'data-date-useseconds' => 'false',
-                'data-date-format' => 'YYYY-MM-DD']) !!}
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                </span>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            {{ trans('app.time') }}
-            <div class="input-group date" id='timepicker'>
-                {!! Form::text('pick_time', old('pick_time'),
-                ['class' => 'form-control',
-                'placeholder' => 'HH:MM']) !!}
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-time"></span>
-                </span>
-            </div>
-        </div>
-        <div class="col-md-4">
-            {{ trans('app.passengers') }}
-            {!! Form::text('passengers', old('passengers'),
-                ['class' => 'form-control']) !!}
-        </div>
-        <div class="col-md-4">
-            {{ trans('app.baby') }}
-            {!! Form::text('passengers_baby', old('passengers_baby'),
-                ['class' => 'form-control']) !!}
-        </div>
+    @include('partials.forms._hidden_fields')
+    <div class="row cars" data-direction="0">
+        @foreach($cars as $car)
+            @include('partials.forms.step2_forCars', ['direction' => 0])
+        @endforeach
     </div>
     <HR>
     <div class="row">
-        <div class="col-md-12">
-            <div class="form-group">
-                {{ trans('app.order_back') }}
-                {!! Form::checkbox('ride_back', 'ride_back', old('ride_back') ) !!}
-            </div>
-            <div class="form-group">
-                {{ trans('app.order_back') }}
-                {!! Form::checkbox('ride_back', 'ride_back', old('ride_back') ) !!}
-            </div>
-        </div>
+        @include('partials.forms._isset_back')
     </div>
+    @if(old('ride_back'))
+        <div class="row cars" data-direction="1">
+            @foreach($cars as $car)
+                @include('partials.forms.step2_forCars', ['direction' => 1])
+            @endforeach
+        </div>
+    @endif
     <HR>
     <div class="row">
         <div class="col-md-12">
@@ -86,8 +31,8 @@
         </div>
     </div>
     <div class="form-group">
-        {!! Form::submit( trans('app.continue'), ['class'=>'btn btn-primary']) !!}
-        {!! Form::submit( trans('app.back'), ['class'=>'btn btn-primary']) !!}
+        {!! Form::submit( trans('app.continue'), ['class'=>'btn btn-primary', 'name' => 'continue']) !!}
+        {!! Form::submit( trans('app.back'), ['class'=>'btn btn-primary', 'name' => 'back']) !!}
     </div>
 
     {!! Form::close() !!}
@@ -99,7 +44,12 @@
             $('.input-date').datetimepicker({
             });
             $('#timepicker').datetimepicker({
-                format: 'LT'
+                format: 'HH:mm'
+            });
+        });
+        $(function () {
+            $('input[type="radio"]').on('change', function () {
+//
             });
         });
     </script>

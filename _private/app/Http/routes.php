@@ -68,6 +68,7 @@ Route::group(['middlewareGroups' => 'web'], function ()
     Route::post('step5', 'OrderController@postStep5')
         ->name('step5');
 
+    Route::get('orders/{id?}', 'OrderController@getOrders');
     Route::get('/', 'HomeController@getIndex');
 });
 
@@ -87,6 +88,5 @@ Route::get('init', function(){
 
 function is_active($step, $num) {
     $active = ($step === $num) ? 'color:blue' : '';
-
     return 'style="font-size:2em;' . $active . '"';
 }

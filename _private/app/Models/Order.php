@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     protected $guarded = ['id'];
-    protected $fillable = ['name'];
 
     public function routeFrom()
     {
@@ -22,5 +21,10 @@ class Order extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function rides()
+    {
+        return $this->hasMany(Ride::class, 'order_id', 'id');
     }
 }
